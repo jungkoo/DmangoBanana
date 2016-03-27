@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')  # utf-8 support
 from flask import Flask
-
-
-from flask import Flask, current_app, Blueprint, request
-from flask.ext.dmango import Dmango
+from flask_dmango import Dmango
 
 app = Flask(__name__)
 dmango = Dmango(app)
@@ -13,4 +14,4 @@ app.register_blueprint(bp)
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=6757)
+    app.run('0.0.0.0', port=6757, debug=True)
